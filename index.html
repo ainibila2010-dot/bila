@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florist Elegance | Toko Bunga Premium & Modern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        roseGold: '#C5A059',
+                        softPink: '#FDF2F4',
+                        darkGreen: '#2C3E35',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#FAFAFA] text-gray-800 font-sans antialiased">
+
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="font-serif text-2xl font-bold tracking-wider text-darkGreen">
+                FLORIST<span class="text-roseGold">ELEGANCE</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="#beranda" class="text-gray-600 hover:text-roseGold transition">Beranda</a>
+                <a href="#katalog" class="text-gray-600 hover:text-roseGold transition">Katalog</a>
+                <a href="#tentang" class="text-gray-600 hover:text-roseGold transition">Tentang Kami</a>
+                <a href="#kontak" class="text-gray-600 hover:text-roseGold transition">Kontak</a>
+            </nav>
+            <div>
+                <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20tertarik%20untuk%20memesan%20bunga%20dari%20Florist%20Elegance." target="_blank" 
+                   class="bg-darkGreen text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-roseGold transition shadow-sm">
+                   Hubungi Kami
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="beranda" class="relative bg-softPink py-24 md:py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="text-xs uppercase tracking-widest text-roseGold font-semibold bg-white px-3 py-1.5 rounded-full shadow-sm">
+                    Koleksi Eksklusif 2026
+                </span>
+                <h1 class="font-serif text-4xl md:text-6xl font-bold text-darkGreen leading-tight">
+                    Ungkapkan Perasaanmu dengan Keindahan Bunga
+                </h1>
+                <p class="text-gray-600 text-base md:text-lg font-light leading-relaxed">
+                    Setiap rangkaian bunga dirancang khusus dengan penuh cinta dan estetika tinggi untuk menyempurnakan setiap momen berharga Anda.
+                </p>
+                <div class="pt-4 flex items-center space-x-4">
+                    <a href="#katalog" class="bg-darkGreen text-white px-8 py-3.5 rounded-full font-medium hover:bg-roseGold transition shadow-lg shadow-darkGreen/10">
+                        Lihat Katalog
+                    </a>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-gray-200">
+                    <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&q=80&w=800" alt="Rangkaian Bunga Mewah" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="katalog" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-darkGreen">Katalog Pilihan</h2>
+            <p class="text-gray-500 font-light">Pilih rangkaian favorit Anda dan langsung pesan melalui WhatsApp dengan mudah.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition group">
+                <div class="h-72 overflow-hidden bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&q=80&w=600" alt="Rose Elegance Bouquet" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-6 space-y-4">
+                    <h3 class="font-serif text-xl font-semibold text-darkGreen">Rose Elegance Bouquet</h3>
+                    <p class="text-gray-500 text-sm font-light">Kombinasi mawar merah pilihan segar untuk momen romantis spesial Anda.</p>
+                    <div class="flex items-center justify-between pt-2">
+                        <span class="font-bold text-lg text-darkGreen">Rp 350.000</span>
+                        <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20memesan%20produk%20Rose%20Elegance%20Bouquet%20seharga%20Rp%20350.000" target="_blank"
+                           class="bg-darkGreen text-white text-sm px-4 py-2 rounded-full font-medium hover:bg-roseGold transition">
+                           Pesan via WA
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition group">
+                <div class="h-72 overflow-hidden bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&q=80&w=600" alt="Pastel Dream Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-6 space-y-4">
+                    <h3 class="font-serif text-xl font-semibold text-darkGreen">Pastel Dream Box</h3>
+                    <p class="text-gray-500 text-sm font-light">Rangkaian bunga bernuansa pastel lembut dalam box eksklusif.</p>
+                    <div class="flex items-center justify-between pt-2">
+                        <span class="font-bold text-lg text-darkGreen">Rp 450.000</span>
+                        <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20memesan%20produk%20Pastel%20Dream%20Box%20seharga%20Rp%20450.000" target="_blank"
+                           class="bg-darkGreen text-white text-sm px-4 py-2 rounded-full font-medium hover:bg-roseGold transition">
+                           Pesan via WA
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition group">
+                <div class="h-72 overflow-hidden bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&q=80&w=600" alt="Sunset Bloom Vase" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-6 space-y-4">
+                    <h3 class="font-serif text-xl font-semibold text-darkGreen">Sunset Bloom Vase</h3>
+                    <p class="text-gray-500 text-sm font-light">Bunga segar lengkap dengan vas kaca modern, mempercantik ruangan.</p>
+                    <div class="flex items-center justify-between pt-2">
+                        <span class="font-bold text-lg text-darkGreen">Rp 520.000</span>
+                        <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20memesan%20produk%20Sunset%20Bloom%20Vase%20seharga%20Rp%20520.000" target="_blank"
+                           class="bg-darkGreen text-white text-sm px-4 py-2 rounded-full font-medium hover:bg-roseGold transition">
+                           Pesan via WA
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tentang" class="bg-softPink py-24">
+        <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-darkGreen">Tentang Florist Elegance</h2>
+            <p class="text-gray-600 font-light leading-relaxed text-base md:text-lg">
+                Kami percaya bahwa setiap rangkaian bunga memiliki cerita tersendiri. Berdiri sejak tahun 2024, Florist Elegance berkomitmen untuk memberikan kualitas bunga segar pilihan terbaik yang dirangkai langsung oleh tangan para florist profesional berpengalaman.
+            </p>
+        </div>
+    </section>
+
+    <footer id="kontak" class="bg-darkGreen text-white py-12">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
+            <div>
+                <h3 class="font-serif text-2xl font-bold tracking-wider mb-2">FLORIST<span class="text-roseGold">ELEGANCE</span></h3>
+                <p class="text-gray-400 text-sm font-light">Mewujudkan keindahan di setiap momen spesial Anda.</p>
+            </div>
+            <div class="text-sm text-gray-300 space-y-1">
+                <p>📍 Jl. Bunga Melati No. 12, pulokulon</p>
+                <p>📞 WhatsApp: +62 812-3456-7890</p>
+                <p>⏰ Buka Setiap Hari: 08.00 - 20.00 WIB</p>
+            </div>
+            <div class="flex justify-center md:justify-end">
+                <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20berkonsultasi%20mengenai%20pesanan%20bunga." target="_blank"
+                   class="bg-roseGold text-white px-6 py-3 rounded-full font-medium hover:bg-white hover:text-darkGreen transition shadow-md">
+                   Konsultasi via WhatsApp
+                </a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-12 pt-6 border-t border-gray-700 text-center text-xs text-gray-500">
+            &copy; 2026 Florist Elegance. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
