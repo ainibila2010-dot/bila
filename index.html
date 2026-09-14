@@ -1,169 +1,600 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Florist Elegance | Toko Bunga Premium & Modern</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
-                    colors: {
-                        roseGold: '#C5A059',
-                        softPink: '#FDF2F4',
-                        darkGreen: '#2C3E35',
-                    }
-                }
-            }
-        }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samudra Biru —  Ikan Paus Segar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deep: #0A2A43;
+    --ocean: #0F5C8C;
+    --teal: #1B8A80;
+    --foam: #EAF7F5;
+    --sand: #FBF6EC;
+    --coral: #FF7A55;
+    --coral-dark: #E85F3B;
+    --ink: #0A2A43;
+    --line: rgba(10,42,67,0.12);
+    --shadow-blue: rgba(10,42,67,0.18);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Work Sans', sans-serif;
+    color:var(--ink);
+    background:var(--sand);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    margin:0;
+    line-height:1.1;
+  }
+  p{line-height:1.6;}
+  a{color:inherit;}
+  button{font-family:inherit;cursor:pointer;border:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--deep);
+    color:var(--foam);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 24px;max-width:1120px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-size:22px;font-weight:600;letter-spacing:0.2px;}
+  .brand svg{width:34px;height:34px;flex-shrink:0;}
+  .nav-links{display:flex;gap:28px;font-size:15px;}
+  .nav-links a{text-decoration:none;opacity:0.85;padding:6px 0;border-bottom:2px solid transparent;transition:border-color .2s, opacity .2s;}
+  .nav-links a:hover{opacity:1;border-color:var(--coral);}
+  .cart-btn{
+    display:flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,0.1);
+    color:var(--foam);
+    padding:9px 16px;border-radius:999px;
+    font-size:14px;font-weight:600;
+    position:relative;
+  }
+  .cart-btn:hover{background:rgba(255,255,255,0.18);}
+  .cart-count{
+    background:var(--coral);color:white;
+    min-width:19px;height:19px;border-radius:999px;
+    font-size:11px;display:flex;align-items:center;justify-content:center;
+    font-weight:700;padding:0 4px;
+  }
+  .menu-toggle{display:none;background:none;color:var(--foam);font-size:26px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:linear-gradient(180deg,var(--deep) 0%, var(--ocean) 100%);
+    color:var(--foam);
+    position:relative;
+    overflow:hidden;
+    padding:64px 24px 0;
+  }
+  .hero-inner{
+    max-width:1120px;margin:0 auto;
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;
+    align-items:center;
+    padding-bottom:70px;
+    position:relative;z-index:2;
+  }
+  .eyebrow-tag{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,0.1);
+    padding:6px 14px;border-radius:999px;
+    font-size:13px;margin-bottom:18px;
+  }
+  .eyebrow-tag .dot{width:7px;height:7px;border-radius:50%;background:#4ADE80;}
+  .hero h1{font-size:clamp(32px,4.2vw,52px);max-width:16ch;}
+  .hero p.lede{max-width:42ch;font-size:17px;opacity:0.85;margin-top:16px;}
+  .hero-ctas{display:flex;gap:14px;margin-top:28px;}
+  .btn{
+    padding:13px 26px;border-radius:10px;font-size:15px;font-weight:600;
+    transition:transform .15s, box-shadow .15s, background .15s;
+  }
+  .btn-primary{background:var(--coral);color:white;}
+  .btn-primary:hover{background:var(--coral-dark);transform:translateY(-1px);}
+  .btn-ghost{background:transparent;color:var(--foam);border:1.5px solid rgba(255,255,255,0.35)!important;}
+  .btn-ghost:hover{border-color:rgba(255,255,255,0.7)!important;}
+  .hero-art{position:relative;height:280px;}
+  .bubble{position:absolute;border-radius:50%;background:rgba(255,255,255,0.12);}
+  .wave-divider{display:block;width:100%;position:relative;z-index:1;margin-top:-2px;}
+
+  /* ---------- STRIP INFO ---------- */
+  .strip{
+    background:var(--foam);
+    border-bottom:1px solid var(--line);
+  }
+  .strip .wrap{
+    display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;
+    padding:22px 24px;
+  }
+  .strip-item{display:flex;align-items:center;gap:12px;font-size:14px;min-width:220px;}
+  .strip-item svg{width:26px;height:26px;color:var(--ocean);flex-shrink:0;}
+  .strip-item b{display:block;font-size:14px;}
+  .strip-item span{opacity:0.65;font-size:13px;}
+
+  /* ---------- SECTION HEAD ---------- */
+  .section{padding:72px 24px;}
+  .section-head{max-width:640px;margin:0 auto 40px;text-align:center;}
+  .section-head h2{font-size:clamp(26px,3vw,36px);}
+  .section-head p{opacity:0.7;margin-top:10px;font-size:15.5px;}
+
+  /* ---------- PRODUCTS ---------- */
+  .product-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+    max-width:1120px;margin:0 auto;
+  }
+  .card{
+    background:white;border-radius:16px;overflow:hidden;
+    border:1px solid var(--line);
+    display:flex;flex-direction:column;
+    transition:transform .18s, box-shadow .18s;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 16px 32px var(--shadow-blue);}
+  .card-media{
+    background:linear-gradient(160deg,#DFF3F1,#CDEBEF);
+    height:170px;display:flex;align-items:center;justify-content:center;
+    position:relative;
+  }
+  .card-media svg{width:120px;height:120px;}
+  .fresh-tag{
+    position:absolute;top:12px;left:12px;
+    background:var(--deep);color:var(--foam);
+    font-size:11px;font-weight:700;letter-spacing:0.3px;
+    padding:5px 10px;border-radius:999px;
+  }
+  .card-body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1;}
+  .card-body h3{font-size:19px;}
+  .card-meta{font-size:13px;opacity:0.6;}
+  .card-foot{
+    margin-top:auto;padding-top:12px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .price{font-family:'Fraunces',serif;font-weight:600;font-size:19px;color:var(--ocean);}
+  .price span{font-size:12px;font-weight:500;color:var(--ink);opacity:0.55;font-family:'Work Sans',sans-serif;}
+  .add-btn{
+    background:var(--deep);color:white;
+    padding:9px 16px;border-radius:8px;font-size:13.5px;font-weight:600;
+    display:flex;align-items:center;gap:6px;
+    transition:background .15s;
+  }
+  .add-btn:hover{background:var(--ocean);}
+
+  /* ---------- STORE INFO ---------- */
+  .info-section{background:var(--deep);color:var(--foam);position:relative;overflow:hidden;}
+  .info-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:48px;
+    max-width:1120px;margin:0 auto;position:relative;z-index:2;
+  }
+  .info-grid h2{color:var(--foam);font-size:30px;margin-bottom:16px;}
+  .info-list{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-direction:column;gap:18px;}
+  .info-list li{display:flex;gap:14px;font-size:14.5px;}
+  .info-list svg{width:22px;height:22px;flex-shrink:0;margin-top:2px;color:var(--coral);}
+  .info-list b{display:block;margin-bottom:2px;}
+  .info-list span{opacity:0.75;}
+  .map-card{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:18px;padding:26px;
+  }
+  .map-card h3{color:var(--foam);font-size:18px;margin-bottom:14px;}
+  .hours-row{display:flex;justify-content:space-between;font-size:14px;padding:9px 0;border-bottom:1px dashed rgba(255,255,255,0.15);}
+  .hours-row:last-child{border-bottom:none;}
+  .hours-row span:last-child{opacity:0.7;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:#08192B;color:rgba(234,247,245,0.6);padding:36px 24px;font-size:13.5px;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center;}
+
+  /* ---------- CART DRAWER ---------- */
+  .overlay{
+    position:fixed;inset:0;background:rgba(10,42,67,0.45);
+    opacity:0;pointer-events:none;transition:opacity .25s;z-index:90;
+  }
+  .overlay.show{opacity:1;pointer-events:auto;}
+  .drawer{
+    position:fixed;top:0;right:0;height:100%;width:400px;max-width:92vw;
+    background:var(--sand);z-index:100;
+    transform:translateX(100%);transition:transform .3s ease;
+    display:flex;flex-direction:column;
+    box-shadow:-12px 0 40px rgba(0,0,0,0.2);
+  }
+  .drawer.show{transform:translateX(0);}
+  .drawer-head{
+    padding:22px 22px 16px;border-bottom:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .drawer-head h3{font-size:20px;}
+  .close-btn{background:none;font-size:22px;line-height:1;color:var(--ink);opacity:0.5;}
+  .close-btn:hover{opacity:1;}
+  .drawer-items{flex:1;overflow-y:auto;padding:16px 22px;display:flex;flex-direction:column;gap:16px;}
+  .empty-cart{text-align:center;margin-top:60px;opacity:0.55;font-size:14px;}
+  .cart-item{display:flex;gap:12px;align-items:center;}
+  .cart-item-media{
+    width:56px;height:56px;border-radius:10px;
+    background:linear-gradient(160deg,#DFF3F1,#CDEBEF);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .cart-item-media svg{width:38px;height:38px;}
+  .cart-item-info{flex:1;min-width:0;}
+  .cart-item-info b{font-size:14.5px;display:block;}
+  .cart-item-info span{font-size:12.5px;opacity:0.6;}
+  .qty-control{display:flex;align-items:center;gap:8px;margin-top:6px;}
+  .qty-control button{
+    width:22px;height:22px;border-radius:6px;background:var(--foam);
+    border:1px solid var(--line);font-size:13px;display:flex;align-items:center;justify-content:center;
+  }
+  .qty-control span{font-size:13px;min-width:16px;text-align:center;}
+  .remove-btn{font-size:12px;color:var(--coral-dark);opacity:0.75;background:none;text-decoration:underline;margin-left:6px;}
+  .drawer-foot{border-top:1px solid var(--line);padding:18px 22px 22px;}
+  .subtotal-row{display:flex;justify-content:space-between;font-size:15px;margin-bottom:14px;}
+  .subtotal-row b{font-family:'Fraunces',serif;font-size:19px;color:var(--ocean);}
+  .checkout-btn{width:100%;background:var(--coral);color:white;padding:14px;border-radius:10px;font-size:15px;font-weight:700;}
+  .checkout-btn:hover{background:var(--coral-dark);}
+  .checkout-btn:disabled{opacity:0.4;cursor:not-allowed;}
+
+  /* ---------- CHECKOUT MODAL ---------- */
+  .modal-overlay{
+    position:fixed;inset:0;background:rgba(10,42,67,0.55);
+    display:none;align-items:center;justify-content:center;z-index:110;padding:20px;
+  }
+  .modal-overlay.show{display:flex;}
+  .modal{
+    background:white;border-radius:18px;max-width:440px;width:100%;
+    max-height:88vh;overflow-y:auto;padding:30px;
+  }
+  .modal h3{font-size:22px;margin-bottom:6px;}
+  .modal p.sub{opacity:0.6;font-size:14px;margin-bottom:22px;}
+  .field{margin-bottom:14px;}
+  .field label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;}
+  .field input, .field select{
+    width:100%;padding:11px 12px;border-radius:8px;border:1px solid var(--line);
+    font-family:inherit;font-size:14px;background:var(--foam);
+  }
+  .modal-summary{background:var(--foam);border-radius:12px;padding:14px 16px;margin:18px 0;font-size:14px;}
+  .modal-summary .row{display:flex;justify-content:space-between;margin-bottom:6px;}
+  .modal-summary .row:last-child{margin-bottom:0;font-weight:700;padding-top:8px;border-top:1px dashed var(--line);}
+  .success-box{text-align:center;padding:20px 0;}
+  .success-box svg{width:60px;height:60px;color:var(--teal);margin-bottom:14px;}
+  .success-box h3{margin-bottom:8px;}
+  .success-box p{opacity:0.65;font-size:14px;}
+
+  @media(max-width:860px){
+    .nav-links{display:none;}
+    .menu-toggle{display:block;background:none;}
+    .hero-inner{grid-template-columns:1fr;}
+    .hero-art{display:none;}
+    .info-grid{grid-template-columns:1fr;}
+    .product-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(max-width:520px){
+    .product-grid{grid-template-columns:1fr;}
+    .strip .wrap{flex-direction:column;}
+    .drawer{width:100%;max-width:100%;}
+  }
+</style>
 </head>
-<body class="bg-[#FAFAFA] text-gray-800 font-sans antialiased">
+<body>
 
-    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="font-serif text-2xl font-bold tracking-wider text-darkGreen">
-                FLORIST<span class="text-roseGold">ELEGANCE</span>
-            </a>
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
-                <a href="#beranda" class="text-gray-600 hover:text-roseGold transition">Beranda</a>
-                <a href="#katalog" class="text-gray-600 hover:text-roseGold transition">Katalog</a>
-                <a href="#tentang" class="text-gray-600 hover:text-roseGold transition">Tentang Kami</a>
-                <a href="#kontak" class="text-gray-600 hover:text-roseGold transition">Kontak</a>
-            </nav>
-            <div>
-                <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20tertarik%20untuk%20memesan%20bunga%20dari%20Florist%20Elegance." target="_blank" 
-                   class="bg-darkGreen text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-roseGold transition shadow-sm">
-                   Hubungi Kami
-                </a>
-            </div>
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="nav">
+    <div class="brand">
+      <svg viewBox="0 0 48 48" fill="none"><path d="M4 30c6-8 10 8 16 0s10 8 16 0s8 4 8 4" stroke="#FF7A55" stroke-width="3" stroke-linecap="round"/><path d="M4 22c6-8 10 8 16 0s10 8 16 0s8 4 8 4" stroke="#EAF7F5" stroke-width="3" stroke-linecap="round" opacity="0.6"/></svg>
+      Samudra Biru
+    </div>
+    <nav class="nav-links">
+      <a href="#produk">Produk</a>
+      <a href="#info-toko">Info Toko</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+    <button class="cart-btn" onclick="openCart()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      Keranjang <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="bubble" style="width:70px;height:70px;top:30px;left:5%;"></div>
+  <div class="bubble" style="width:34px;height:34px;top:120px;left:14%;"></div>
+  <div class="bubble" style="width:20px;height:20px;top:70px;left:24%;"></div>
+
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow-tag"><span class="dot"></span> Tangkapan hari ini sudah sampai</div>
+      <h1>Ikan segar langsung dari nelayan ke meja makanmu</h1>
+      <p class="lede">Dipilih tangan setiap subuh, dikemas dingin, dan diantar hari yang sama. Tanpa pengawet, tanpa drama — cuma ikan enak.</p>
+      <div class="hero-ctas">
+        <a href="#produk" class="btn btn-primary">Lihat Produk</a>
+        <a href="#info-toko" class="btn btn-ghost">Info Toko</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <svg viewBox="0 0 320 260" width="100%" height="100%">
+        <ellipse cx="160" cy="150" rx="140" ry="18" fill="rgba(255,255,255,0.06)"/>
+        <g transform="translate(30,40)">
+          <path d="M0 60 Q50 0 130 40 Q170 60 180 30 L180 90 Q170 60 130 80 Q50 120 0 60Z" fill="#FF7A55" opacity="0.95"/>
+          <circle cx="35" cy="55" r="5" fill="#0A2A43"/>
+        </g>
+        <g transform="translate(150,120) scale(0.7)">
+          <path d="M0 60 Q50 0 130 40 Q170 60 180 30 L180 90 Q170 60 130 80 Q50 120 0 60Z" fill="#F4D35E"/>
+          <circle cx="35" cy="55" r="5" fill="#0A2A43"/>
+        </g>
+        <g transform="translate(60,150) scale(0.55)">
+          <path d="M0 60 Q50 0 130 40 Q170 60 180 30 L180 90 Q170 60 130 80 Q50 120 0 60Z" fill="#4ADE80"/>
+          <circle cx="35" cy="55" r="5" fill="#0A2A43"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <svg class="wave-divider" viewBox="0 0 1440 90" preserveAspectRatio="none" style="height:80px;">
+    <path fill="#EAF7F5" d="M0,32 C240,90 480,0 720,32 C960,64 1200,10 1440,40 L1440,100 L0,100 Z"></path>
+  </svg>
+</section>
+
+<!-- ================= STRIP INFO ================= -->
+<section class="strip">
+  <div class="wrap">
+    <div class="strip-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M9 21v-6h6v6"/></svg>
+      <div><b>Buka setiap hari</b><span>05.00 – 17.00 WIB</span></div>
+    </div>
+    <div class="strip-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h18v13H3z"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+      <div><b>Gratis ongkir</b><span>min. belanja Rp200.000</span></div>
+    </div>
+    <div class="strip-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <div><b>Kirim di hari yang sama</b><span>untuk order sebelum jam 14.00</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRODUK ================= -->
+<section class="section" id="produk">
+  <div class="section-head">
+    <h2>Tangkapan Hari Ini</h2>
+    <p>Semua ikan dipilih langsung dari pelelangan pagi, dijual per kilogram.</p>
+  </div>
+  <div class="product-grid" id="productGrid"></div>
+</section>
+
+<!-- ================= INFO TOKO ================= -->
+<section class="info-section section" id="info-toko">
+  <div class="bubble" style="width:90px;height:90px;bottom:-30px;right:8%;"></div>
+  <div class="info-grid">
+    <div>
+      <h2>Info Toko</h2>
+      <ul class="info-list">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><b>Alamat</b><span>Jl. Pelabuhan Nelayan No. 12, Surabaya, Jawa Timur</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          <div><b>WhatsApp / Telepon</b><span>0812-3456-7890 (chat lebih cepat dibalas)</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3v4M8 3v4M2 11h20"/></svg>
+          <div><b>Metode Pembayaran</b><span>Transfer bank, e-wallet, atau bayar di tempat</span></div>
+        </li>
+      </ul>
+    </div>
+    <div class="map-card">
+      <h3>Jam Operasional</h3>
+      <div class="hours-row"><span>Senin – Jumat</span><span>05.00 – 17.00</span></div>
+      <div class="hours-row"><span>Sabtu</span><span>05.00 – 18.00</span></div>
+      <div class="hours-row"><span>Minggu</span><span>06.00 – 14.00</span></div>
+      <div class="hours-row"><span>Hari besar</span><span>Tutup</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer id="kontak">
+  <div class="wrap">
+    <span>© 2026 Samudra Biru. Ikan segar, tanpa drama.</span>
+    <span>Surabaya, Indonesia</span>
+  </div>
+</footer>
+
+<!-- ================= CART DRAWER ================= -->
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head">
+    <h3>Keranjang Belanja</h3>
+    <button class="close-btn" onclick="closeCart()">&times;</button>
+  </div>
+  <div class="drawer-items" id="drawerItems"></div>
+  <div class="drawer-foot">
+    <div class="subtotal-row"><span>Subtotal</span><b id="subtotalText">Rp0</b></div>
+    <button class="checkout-btn" id="checkoutBtn" onclick="openCheckout()" disabled>Checkout</button>
+  </div>
+</aside>
+
+<!-- ================= CHECKOUT MODAL ================= -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modalContent"></div>
+</div>
+
+<script>
+  const products = [
+    {id:1, name:"Tuna Sirip Kuning", meta:"Fillet, kualitas sashimi", price:85000, color:"#0F5C8C"},
+    {id:2, name:"Salmon Norwegia", meta:"Import, tekstur lembut", price:145000, color:"#FF7A55"},
+    {id:3, name:"Kakap Merah", meta:"Utuh, cocok untuk bakar", price:65000, color:"#E85F3B"},
+    {id:4, name:"Kerapu Bebek", meta:"Utuh, favorit untuk kukus", price:120000, color:"#1B8A80"},
+    {id:5, name:"Cumi-Cumi Segar", meta:"Sudah bersih, siap masak", price:55000, color:"#0A2A43"},
+    {id:6, name:"Udang Vaname", meta:"Ukuran besar, per kg", price:95000, color:"#F4A259"},
+  ];
+
+  function fishSVG(color){
+    return `<svg viewBox="0 0 180 90" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 45 Q45 -5 120 30 Q160 45 175 15 L175 75 Q160 45 120 60 Q45 95 5 45Z" fill="${color}"/>
+      <circle cx="35" cy="40" r="5" fill="white"/>
+      <circle cx="35" cy="40" r="2.2" fill="#0A2A43"/>
+      <path d="M60 30 Q75 40 60 55" stroke="rgba(255,255,255,0.35)" stroke-width="3" fill="none"/>
+    </svg>`;
+  }
+
+  const grid = document.getElementById('productGrid');
+  grid.innerHTML = products.map(p => `
+    <div class="card">
+      <div class="card-media">
+        <span class="fresh-tag">Segar Hari Ini</span>
+        ${fishSVG(p.color)}
+      </div>
+      <div class="card-body">
+        <h3>${p.name}</h3>
+        <div class="card-meta">${p.meta}</div>
+        <div class="card-foot">
+          <div class="price">Rp${p.price.toLocaleString('id-ID')} <span>/kg</span></div>
+          <button class="add-btn" onclick="addToCart(${p.id})">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+            Tambah
+          </button>
         </div>
-    </header>
+      </div>
+    </div>
+  `).join('');
 
-    <section id="beranda" class="relative bg-softPink py-24 md:py-32 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6">
-                <span class="text-xs uppercase tracking-widest text-roseGold font-semibold bg-white px-3 py-1.5 rounded-full shadow-sm">
-                    Koleksi Eksklusif 2026
-                </span>
-                <h1 class="font-serif text-4xl md:text-6xl font-bold text-darkGreen leading-tight">
-                    Ungkapkan Perasaanmu dengan Keindahan Bunga
-                </h1>
-                <p class="text-gray-600 text-base md:text-lg font-light leading-relaxed">
-                    Setiap rangkaian bunga dirancang khusus dengan penuh cinta dan estetika tinggi untuk menyempurnakan setiap momen berharga Anda.
-                </p>
-                <div class="pt-4 flex items-center space-x-4">
-                    <a href="#katalog" class="bg-darkGreen text-white px-8 py-3.5 rounded-full font-medium hover:bg-roseGold transition shadow-lg shadow-darkGreen/10">
-                        Lihat Katalog
-                    </a>
-                </div>
-            </div>
-            <div class="relative">
-                <div class="w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-gray-200">
-                    <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&q=80&w=800" alt="Rangkaian Bunga Mewah" class="w-full h-full object-cover">
-                </div>
-            </div>
-        </div>
-    </section>
+  let cart = {};
 
-    <section id="katalog" class="py-24 max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <h2 class="font-serif text-3xl md:text-4xl font-bold text-darkGreen">Katalog Pilihan</h2>
-            <p class="text-gray-500 font-light">Pilih rangkaian favorit Anda dan langsung pesan melalui WhatsApp dengan mudah.</p>
-        </div>
+  function addToCart(id){
+    cart[id] = (cart[id] || 0) + 1;
+    renderCart();
+    openCart();
+  }
+  function changeQty(id, delta){
+    if(!cart[id]) return;
+    cart[id] += delta;
+    if(cart[id] <= 0) delete cart[id];
+    renderCart();
+  }
+  function removeItem(id){
+    delete cart[id];
+    renderCart();
+  }
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition group">
-                <div class="h-72 overflow-hidden bg-gray-100">
-                    <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&q=80&w=600" alt="Rose Elegance Bouquet" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                </div>
-                <div class="p-6 space-y-4">
-                    <h3 class="font-serif text-xl font-semibold text-darkGreen">Rose Elegance Bouquet</h3>
-                    <p class="text-gray-500 text-sm font-light">Kombinasi mawar merah pilihan segar untuk momen romantis spesial Anda.</p>
-                    <div class="flex items-center justify-between pt-2">
-                        <span class="font-bold text-lg text-darkGreen">Rp 350.000</span>
-                        <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20memesan%20produk%20Rose%20Elegance%20Bouquet%20seharga%20Rp%20350.000" target="_blank"
-                           class="bg-darkGreen text-white text-sm px-4 py-2 rounded-full font-medium hover:bg-roseGold transition">
-                           Pesan via WA
-                        </a>
-                    </div>
-                </div>
-            </div>
+  function renderCart(){
+    const items = Object.keys(cart);
+    const drawerItems = document.getElementById('drawerItems');
+    const cartCount = document.getElementById('cartCount');
+    const subtotalText = document.getElementById('subtotalText');
+    const checkoutBtn = document.getElementById('checkoutBtn');
 
-            <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition group">
-                <div class="h-72 overflow-hidden bg-gray-100">
-                    <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&q=80&w=600" alt="Pastel Dream Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                </div>
-                <div class="p-6 space-y-4">
-                    <h3 class="font-serif text-xl font-semibold text-darkGreen">Pastel Dream Box</h3>
-                    <p class="text-gray-500 text-sm font-light">Rangkaian bunga bernuansa pastel lembut dalam box eksklusif.</p>
-                    <div class="flex items-center justify-between pt-2">
-                        <span class="font-bold text-lg text-darkGreen">Rp 450.000</span>
-                        <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20memesan%20produk%20Pastel%20Dream%20Box%20seharga%20Rp%20450.000" target="_blank"
-                           class="bg-darkGreen text-white text-sm px-4 py-2 rounded-full font-medium hover:bg-roseGold transition">
-                           Pesan via WA
-                        </a>
-                    </div>
-                </div>
-            </div>
+    let totalQty = 0, subtotal = 0;
+    items.forEach(id => { totalQty += cart[id]; });
+    cartCount.textContent = totalQty;
 
-            <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition group">
-                <div class="h-72 overflow-hidden bg-gray-100">
-                    <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&q=80&w=600" alt="Sunset Bloom Vase" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                </div>
-                <div class="p-6 space-y-4">
-                    <h3 class="font-serif text-xl font-semibold text-darkGreen">Sunset Bloom Vase</h3>
-                    <p class="text-gray-500 text-sm font-light">Bunga segar lengkap dengan vas kaca modern, mempercantik ruangan.</p>
-                    <div class="flex items-center justify-between pt-2">
-                        <span class="font-bold text-lg text-darkGreen">Rp 520.000</span>
-                        <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20memesan%20produk%20Sunset%20Bloom%20Vase%20seharga%20Rp%20520.000" target="_blank"
-                           class="bg-darkGreen text-white text-sm px-4 py-2 rounded-full font-medium hover:bg-roseGold transition">
-                           Pesan via WA
-                        </a>
-                    </div>
-                </div>
+    if(items.length === 0){
+      drawerItems.innerHTML = `<div class="empty-cart">Keranjang masih kosong.<br>Yuk pilih ikan segar dulu 🐟</div>`;
+      checkoutBtn.disabled = true;
+    } else {
+      drawerItems.innerHTML = items.map(id => {
+        const p = products.find(x => x.id == id);
+        const lineTotal = p.price * cart[id];
+        subtotal += lineTotal;
+        return `
+          <div class="cart-item">
+            <div class="cart-item-media">${fishSVG(p.color)}</div>
+            <div class="cart-item-info">
+              <b>${p.name}</b>
+              <span>Rp${p.price.toLocaleString('id-ID')}/kg</span>
+              <div class="qty-control">
+                <button onclick="changeQty(${p.id}, -1)">−</button>
+                <span>${cart[id]} kg</span>
+                <button onclick="changeQty(${p.id}, 1)">+</button>
+                <button class="remove-btn" onclick="removeItem(${p.id})">Hapus</button>
+              </div>
             </div>
-        </div>
-    </section>
+          </div>`;
+      }).join('');
+      checkoutBtn.disabled = false;
+    }
+    subtotalText.textContent = 'Rp' + subtotal.toLocaleString('id-ID');
+  }
 
-    <section id="tentang" class="bg-softPink py-24">
-        <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
-            <h2 class="font-serif text-3xl md:text-4xl font-bold text-darkGreen">Tentang Florist Elegance</h2>
-            <p class="text-gray-600 font-light leading-relaxed text-base md:text-lg">
-                Kami percaya bahwa setiap rangkaian bunga memiliki cerita tersendiri. Berdiri sejak tahun 2024, Florist Elegance berkomitmen untuk memberikan kualitas bunga segar pilihan terbaik yang dirangkai langsung oleh tangan para florist profesional berpengalaman.
-            </p>
-        </div>
-    </section>
+  function openCart(){
+    document.getElementById('drawer').classList.add('show');
+    document.getElementById('overlay').classList.add('show');
+  }
+  function closeCart(){
+    document.getElementById('drawer').classList.remove('show');
+    document.getElementById('overlay').classList.remove('show');
+  }
 
-    <footer id="kontak" class="bg-darkGreen text-white py-12">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
-            <div>
-                <h3 class="font-serif text-2xl font-bold tracking-wider mb-2">FLORIST<span class="text-roseGold">ELEGANCE</span></h3>
-                <p class="text-gray-400 text-sm font-light">Mewujudkan keindahan di setiap momen spesial Anda.</p>
-            </div>
-            <div class="text-sm text-gray-300 space-y-1">
-                <p>📍 Jl. Watudakon No. 12, pulokulon</p>
-                <p>📞 WhatsApp: +62 858-5768-5373</p>
-                <p>⏰ Buka Setiap Hari: 08.00 - 20.00 WIB</p>
-                <p>🏠 Pemilik : Nabila Nur Aini(25) X RPL-3</p>
-            </div>
-            <div class="flex justify-center md:justify-end">
-                <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20berkonsultasi%20mengenai%20pesanan%20bunga." target="_blank"
-                   class="bg-roseGold text-white px-6 py-3 rounded-full font-medium hover:bg-white hover:text-darkGreen transition shadow-md">
-                   Konsultasi via WhatsApp
-                </a>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-6 mt-12 pt-6 border-t border-gray-700 text-center text-xs text-gray-500">
-            &copy; 2026 Florist Elegance. All rights reserved.
-        </div>
-    </footer>
+  function getSubtotal(){
+    return Object.keys(cart).reduce((sum, id) => {
+      const p = products.find(x => x.id == id);
+      return sum + p.price * cart[id];
+    }, 0);
+  }
 
+  function openCheckout(){
+    const subtotal = getSubtotal();
+    const ongkir = subtotal >= 200000 ? 0 : 15000;
+    const total = subtotal + ongkir;
+    document.getElementById('modalContent').innerHTML = `
+      <h3>Selesaikan Pesanan</h3>
+      <p class="sub">Isi data pengiriman kamu di bawah ini.</p>
+      <div class="field"><label>Nama Penerima</label><input type="text" placeholder="Nama lengkap" id="ckName"></div>
+      <div class="field"><label>Alamat Pengiriman</label><input type="text" placeholder="Jl. ... No. ..." id="ckAddress"></div>
+      <div class="field"><label>Metode Pembayaran</label>
+        <select id="ckPayment">
+          <option>Transfer Bank</option>
+          <option>E-Wallet</option>
+          <option>Bayar di Tempat</option>
+        </select>
+      </div>
+      <div class="modal-summary">
+        <div class="row"><span>Subtotal</span><span>Rp${subtotal.toLocaleString('id-ID')}</span></div>
+        <div class="row"><span>Ongkos Kirim</span><span>${ongkir === 0 ? 'Gratis' : 'Rp' + ongkir.toLocaleString('id-ID')}</span></div>
+        <div class="row"><span>Total</span><span>Rp${total.toLocaleString('id-ID')}</span></div>
+      </div>
+      <button class="checkout-btn" onclick="confirmOrder()">Buat Pesanan</button>
+    `;
+    document.getElementById('modalOverlay').classList.add('show');
+  }
+
+  function confirmOrder(){
+    const name = document.getElementById('ckName').value.trim();
+    const address = document.getElementById('ckAddress').value.trim();
+    if(!name || !address){
+      alert('Mohon isi nama dan alamat pengiriman ya.');
+      return;
+    }
+    document.getElementById('modalContent').innerHTML = `
+      <div class="success-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+        <h3>Pesanan Diterima!</h3>
+        <p>Terima kasih, ${name}. Ikan segarmu sedang disiapkan dan akan dikirim ke ${address}.</p>
+      </div>
+    `;
+    cart = {};
+    renderCart();
+    setTimeout(() => {
+      document.getElementById('modalOverlay').classList.remove('show');
+      closeCart();
+    }, 2200);
+  }
+
+  document.getElementById('modalOverlay').addEventListener('click', (e) => {
+    if(e.target.id === 'modalOverlay') document.getElementById('modalOverlay').classList.remove('show');
+  });
+
+  renderCart();
+</script>
 </body>
-</html>
+    </html>
